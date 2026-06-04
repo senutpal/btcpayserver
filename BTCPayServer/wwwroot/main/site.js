@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // support for initializing with special options per instance
         if (fdtp) {
-            var parsed = JSON.parse(fdtp);
+            var parsed = Object.assign({ static: true }, JSON.parse(fdtp));
             flatpickrInstances.push(element.flatpickr(parsed));
         } else {
             var min = element.attr("min");
